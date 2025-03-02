@@ -4,7 +4,7 @@ use std::{
     thread::{self, JoinHandle},
 };
 
-use crate::station_data::{CHANNEL_COUNT, SAMPLE_RATE};
+use crate::station_data::{CHANNEL_COUNT, POLL_BUFFER_SIZE_BYTES, SAMPLE_RATE};
 use awedio::{NextSample, Sound};
 use bytemuck::cast_slice;
 
@@ -56,7 +56,10 @@ impl RingBufferSound {
         }
     }
 
-    pub fn spawn_thread_and_join(&self, rx: Receiver<Box<[u8; 17640]>>) -> JoinHandle<()> {
+    pub fn spawn_thread_and_join(
+        &self,
+        rx: Receiver<Box<[u8; POLL_BUFFER_SIZE_BYTES]>>,
+    ) -> JoinHandle<()> {
         let stuff = self.stuff.clone();
         thread::spawn(move || {
             loop {
