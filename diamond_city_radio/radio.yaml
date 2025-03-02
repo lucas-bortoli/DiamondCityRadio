@@ -1,0 +1,469 @@
+title: Diamond City Radio
+seed: 200000
+tracks:
+  - title: Anything Goes by Cole Porter (1934)
+    source: anything_goes.wav
+    before:
+      - narration: Next I'm going to play some Cole Porter. The song... it's, uhh, it's called Anything Goes.
+        source: 000304d6_1.wav
+      - narration: This here is... well, it's Cole Porter, I guess.
+        source: 000304d5_1.wav
+      - narration: Now here's... uhh, Anything Goes. By Cole Porter.
+        source: 000304d4_1.wav
+      - narration: Next is some Cole Porter.
+        source: 000304d3_1.wav
+    after:
+      - narration: That was Anything Goes, by... by Cole Porter.
+        source: 00087765_1.wav
+  - title: Atom Bomb Baby by The Five Stars (1957)
+    source: atom_bomb_baby.wav
+    before:
+      - narration: '"Atom Bomb Baby" is next. It''s, uhhh, it''s by the Five Stars. In case you were wondering... and didn''t already know because I''ve played it before.'
+        source: 00147727_1.wav
+      - narration: The Five Stars are up next, singing about a lady... I guess maybe one of them liked her? I mean, it couldn't have been all of them, that would... well that would just be weird...
+        source: 00147726_1.wav
+      - narration: Here's the Five Stars, with "Atom Bomb Baby," a song I'm sure that... I mean, they meant well... Just maybe not the best comparison.
+        source: 00147725_1.wav
+    after:
+      - narration: That was the Five Stars. All... all Five of them. Get it? Because it's... well, it's funny... sort of... okay not really.
+        source: 00047263_1.wav
+  - title: Baby It's Just You* by Lynda Carter (2015)
+    source: baby_its_just_you.wav
+    before:
+      - narration: This is, uhh... "Baby It's Just You" by Magnolia. You know, from uhh... from Goodneighbor.
+        source: 00019349_1.wav
+    after: []
+  - title: Butcher Pete (Part 1) by Roy Brown (1950)
+    source: butcher_pete_part_1.wav
+    before:
+      - narration: How about, uhh... some Roy Brown? This is... this is Butcher Pete.
+        source: 000304eb_1.wav
+      - narration: Here's Butcher Pete, by... uhh, Roy Brown.
+        source: 000304ea_1.wav
+      - narration: I, uhh... I hope you like this song. It's Butcher Pete, by Roy Brown.
+        source: 000304e9_1.wav
+    after:
+      - narration: That was Butcher Pete, by Roy Brown. Not, uhh, not the other way around. Heh.
+        source: 00087760_1.wav
+      - narration: Roy Brown. Again. Plenty of his records survived... somehow...
+        source: 0004725d_1.wav
+  - title: Butcher Pete (Part 2) by Roy Brown (1950)
+    source: butcher_pete_part_2.wav
+    before:
+      - narration: This next one... it's, uhh, it's Roy Brown. The song is... Butcher Pete.
+        source: 000304e8_1.wav
+      - narration: There's more of Butcher Pete... and, uhh... well, here it is.
+        source: 000eef62_1.wav
+      - narration: Roy Brown did... Well, he did two songs about Butcher Pete. Here's the second one.
+        source: 000eef63_1.wav
+      - narration: Roy Brown is back, and so is Butcher Pete. Pretty... Uhh, pretty crazy stuff, right?
+        source: 000eef61_1.wav
+    after:
+      - narration: Oh, that Butcher Pete. Just... well, just doing butcher sort of things, I guess... uhh... That was Roy Brown.
+        source: 0004725b_1.wav
+  - title: Civilization, also called "Bongo Bongo Bongo," by Vic Schoen and his Orchestra Danny Kaye and The Andrews Sisters (1947)
+    source: civilization_bongo_bongo_bongo.wav
+    before:
+      - narration: Would you like some Danny Kaye? I sure thought so.
+        source: 000304d7_1.wav
+      - narration: Let's find out... what Danny Kaye knows about Civilization... I mean, or something.
+        source: 000304db_1.wav
+      - narration: This here is Danny Kaye.
+        source: 000304da_1.wav
+      - narration: I just broke what I was going to play, so... uhh, I guess I'll play Danny Kaye instead.
+        source: 000304d9_1.wav
+      - narration: This is Civilization, by... uhh.... it's by, Danny Kaye. Right.
+        source: 000304d8_1.wav
+    after:
+      - narration: Danny Kaye there, singing... uhh, that was Civilization.
+        source: 00087764_1.wav
+  - title: Crawl Out Through the Fallout by Sheldon Allman (1960)
+    source: crawl_out_through_the_fallout.wav
+    before:
+      - narration: Up next, "Crawl Out Through the Fallout." That's the name of the song, I'm not... I'm not recommending it as a course of action.
+        source: 00147721_1.wav
+      - narration: Sheldon Allman wants his girl to "Crawl Out Through the Fallout," but... I mean, if it was that important, wouldn't he have been with her in the first place? Maybe... I guess I'm over-thinking it.
+        source: 00147720_1.wav
+      - narration: Here's Sheldon Allman, with "Crawl Out Through the Fallout"... probably some bad advice overall, really.
+        source: 0014771f_1.wav
+      - narration: Here's a... well, it's a fun one. Feel free to, uhh, rock out... or whatever it is people do...
+        source: 00061536_1.wav
+    after:
+      - narration: You just heard "Crawl Out Through the Fallout."
+        source: 00047261_1.wav
+  - title: Crazy He Calls Me by Billie Holiday (1949)
+    source: crazy_he_calls_me.wav
+    before:
+      - narration: So this is, uhh, Billie Holiday... singing Crazy He Calls Me...
+        source: 000304c6_1.wav
+      - narration: Now I'll... well, I guess I'll play some Billie Holiday.
+        source: 000304c5_1.wav
+      - narration: Next up is... uhh, some Billie Holiday.
+        source: 000304c4_1.wav
+      - narration: This... uhh, this is Billie Holiday... I think. Yeah.
+        source: 000304c3_1.wav
+    after:
+      - narration: You just heard, uhh, Billie Holiday.
+        source: 0008775f_1.wav
+      - narration: So, that... That, uhh, was Billie Holiday there.
+        source: 0008775c_1.wav
+  - title: Dear Hearts and Gentle People by Bob Crosby & The Bob Cats (1949)
+    source: dear_hearts_and_gentle_people.wav
+    before:
+      - narration: Here's "Dear Hearts and Gentle People," which I kind of think maybe Bob Crosby was... well, exaggerating, at least. I'm not accusing him of anything, though. Just saying.
+        source: 001439d0_1.wav
+      - narration: Do you think... I mean, do you think Bob and Bing Crosby ever got into fights over who was better? Weird, right? Anyway, this is Bob Crosby.
+        source: 000ed746_1.wav
+      - narration: Hey, how about some Bob Crosby.
+        source: 000304ce_1.wav
+    after: []
+  - title: Easy Living by Billie Holiday with Teddy Wilson and his orchestra (1937)
+    source: easy_living.wav
+    before:
+      - narration: This is a song about Easy Living. Just... like here in Diamond City, right?
+        source: 000304c9_1.wav
+      - narration: Here's... uhh, Billie Holiday. And, and she's... she's singing Easy Living.
+        source: 000304ca_1.wav
+      - narration: This next song is called Easy Living.
+        source: 000304c8_1.wav
+      - narration: Umm... Here's Billie Holiday with Easy Living.
+        source: 000304c7_1.wav
+    after: []
+  - title: Good Neighbor* by Lynda Carter (2015)
+    source: good_neighbor.wav
+    before:
+      - narration: Here's... well, it's something a little different... Here's Goodneighbor's own Magnolia...
+        source: 0001934c_1.wav
+      - narration: So, uhh, Magnolia... you know, from Goodneighbor... she was, uhh, nice enough to let us play some of her... uhh, her songs. So, here we go.
+        source: 0001934b_1.wav
+      - narration: This song is "Good Neighbor" by, uhh, by Magnolia... who is, uhh, from... well, Goodneighbor.
+        source: 0001934a_1.wav
+    after:
+      - narration: Hope you enjoyed that last song.
+        source: 00047268_1.wav
+  - title: Good Rocking Tonight by Roy Brown with Bob Ogden and his orchestra (1947)
+    source: good_rocking_tonight.wav
+    before:
+      - narration: Roy Brown is back with "Good Rockin' Tonight". I guess... I mean, you wouldn't bother singing about it if the Rockin' wasn't all that great. Like, average Rockin', or sub-par Rockin'...
+        source: 0014771b_1.wav
+    after: []
+  - title: Grandma Plays the Numbers by Wynonie Harris (1949)
+    source: grandma_plays_the_numbers.wav
+    before:
+      - narration: If you found out a, uhh, family member was suffering from an addiction, you might... I don't know... have an intervention? Or, I guess... you could write a song about it...
+        source: 00147719_1.wav
+      - narration: Do you... Do you know someone who gambles? Then maybe this will make you laugh. Or... I guess it might make you really unhappy.
+        source: 000eef70_1.wav
+      - narration: Wynonie Harris had a grandma that gambled, I guess, and so he... wrote a... a song about it. Here it is.
+        source: 000eef6f_1.wav
+    after:
+      - narration: That was, uhh... Wynonie Harris.
+        source: 0004725a_1.wav
+  - title: Happy Times by Bob Crosby (1949)
+    source: happy_times.wav
+    before:
+      - narration: This next one is Bing Crosby. Enjoy.
+        source: 000ed745_1.wav
+      - narration: Now it's Bing Crosby, everyone. Yay.
+        source: 000ed743_1.wav
+      - narration: Here comes Bing Crosby, saying we should "Accentuate the Positive." I guess that was easy if you were Bing Crosby.
+        source: 000ed742_1.wav
+      - narration: Here's Happy Times, by... uhh, Bob Crosby.
+        source: 000304cc_1.wav
+    after:
+      - narration: Bob Crosby there. A... uhh, a good one, huh?
+        source: 0008775d_1.wav
+      - narration: Bob Crosby this time. Not Bing. In case... well, in case you got confused. I sometimes do.
+        source: 00047251_1.wav
+      - narration: That was, uhh, Bing Crosby. Yep.
+        source: 00047250_1.wav
+      - narration: Such a positive guy, that Bing Crosby.
+        source: 0004724f_1.wav
+  - title: He's a Demon, He's a Devil, He's a Doll by Betty Hutton (1950)
+    source: hes_a_demon_hes_a_devil_hes_a_doll.wav
+    before:
+      - narration: Next we've got Betty Hutton. She's... well, she's pretty good. Right?
+        source: 000ed740_1.wav
+    after:
+      - narration: Gotta love Betty Hutton, right?....  right?
+        source: 0004724e_1.wav
+  - title: I Don't Want to Set the World on Fire by The Ink Spots (1941)
+    source: i_dont_want_to_set_the_world_on_fire.wav
+    before:
+      - narration: Next is I Don't Want to Set the World on Fire, by the... uhh, the Ink Spots.
+        source: 000304e2_1.wav
+      - narration: This is the... the Ink Spots, with... I Don't Want to Set the World on Fire.
+        source: 000304e1_1.wav
+      - narration: Here's the... Uhh, it's the Ink Spots.
+        source: 000304e0_1.wav
+    after:
+      - narration: The Ink Spots. That was them, I mean. Singing I Don't Want to Set the World On Fire.
+        source: 00087762_1.wav
+  - title: I'm the One You're Looking For* by Lynda Carter (2015)
+    source: im_the_one_youre_looking_for.wav
+    before: []
+    after: []
+  - title: Into Each Life Some Rain Must Fall by Ella Fitzgerald and The Ink Spots (1944)
+    source: into_each_life_some_rain_must_fall.wav
+    before:
+      - narration: Ella Fitzgerald has a happy song about being mad, I think. I don't... I'm not sure I get it.
+        source: 000edf42_1.wav
+      - narration: I hope you like this one. The song, I mean. It's... It's Ella Fitzgerald.
+        source: 000304df_1.wav
+      - narration: Here's... uhh, it's Into Each Life Some Rain Must Fall.
+        source: 000304dd_1.wav
+      - narration: Up next... well, it's Ella Fitzgerald.
+        source: 000304dc_1.wav
+      - narration: Now I'll play Ella Fitzgerald. Enjoy.
+        source: 000edf41_1.wav
+    after:
+      - narration: Into Each Life, uhh... Rain Must Fall, I think. That was Ella Fitzgerald.
+        source: 00087763_1.wav
+  - title: It's a Man by Betty Hutton (1951)
+    source: its_a_man.wav
+    before:
+      - narration: Betty Hutton is on now, singing about a man. Right? That's what this one is, I think.
+        source: 000ed741_1.wav
+      - narration: Here's some Betty Hutton, if you were waiting to hear it. I mean, either way, I guess. Here it is.
+        source: 000ed73f_1.wav
+      - narration: Betty Hutton sounds like she sure is mad about... some guy. Here's her song.
+        source: 000ed73e_1.wav
+    after:
+      - narration: Another, uhh, good one, from... uhh, Betty Hutton.
+        source: 0004724d_1.wav
+  - title: It's All Over But the Crying by The Ink Spots (1947)
+    source: its_all_over_but_the_crying.wav
+    before:
+      - narration: Hey, how about a song... uhh, by the Ink Spots? This one is, umm, it's called "It's All Over But The Crying."
+        source: 000eef60_1.wav
+      - narration: Here's the Ink Spots... again... With, uhh, "It's All Over But The Crying."
+        source: 000eef5e_1.wav
+      - narration: If anyone is... is listening, this is the Ink Spots.
+        source: 000304e3_1.wav
+    after:
+      - narration: That was the Ink Spots, with "It's All Over but the Crying"... because that part never... well, it never really stops...
+        source: 0004725c_1.wav
+  - title: Keep A Knockin by Louis Jordan (1939)
+    source: keep_a_knockin.wav
+    before:
+      - narration: Hey, you like Louis Jordan, right? Here's a classic from him.
+        source: 000edf4c_1.wav
+      - narration: '"Keep A-Knockin''" by Louis Jordan is next. I like this one. It''s short, and it''s about telling people to go away.'
+        source: 000edf4b_1.wav
+      - narration: Louis Jordan is up next. This is one I can relate to, sort of... Because I don't like talking to people that much.
+        source: 000edf4a_1.wav
+    after:
+      - narration: Who doesn't love some Louis Jordan, right?
+        source: 00047255_1.wav
+  - title: Man Enough* by Lynda Carter (2015)
+    source: man_enough.wav
+    before: []
+    after: []
+  - title: Maybe by The Ink Spots (1940)
+    source: maybe.wav
+    before:
+      - narration: Up next, I thought... well, I thought I'd play the Ink Spots, with Maybe.
+        source: 000304e6_1.wav
+      - narration: Now let's enjoy another one from... uhh, it's The Ink Spots.
+        source: 000eef5f_1.wav
+      - narration: Here's, uhh... the Ink Spots. Maybe. I mean, the song is called Maybe.
+        source: 000304e7_1.wav
+      - narration: Here's... uhh, Here's the Ink Spots, singing Maybe.
+        source: 000304e5_1.wav
+      - narration: This next one... it's, uhh, it's Maybe by the Ink Spots.
+        source: 000304e4_1.wav
+    after:
+      - narration: I.... I, uhh, hope you liked that one. That was Maybe, by the Ink Spots.
+        source: 00087761_1.wav
+  - title: Mighty, Mighty Man by Earl Barnes and his Orchestra, featuring Roy Brown (1948)
+    source: mighty_mighty_man.wav
+    before:
+      - narration: Here's Roy Brown... again... He's not chopping, or being mighty... well, I mean maybe he is but that's not the focus of this one. Not exactly. I don't think.
+        source: 0014771a_1.wav
+      - narration: I know you just can't get enough of that Roy Brown... I mean, boy I hope that's the case because I've kind of got a lot of his stuff. Here he is.
+        source: 00147713_1.wav
+      - narration: Now we'll hear some Roy Brown. I mean, I'll play... it's, uhh... Mighty Mighty Man.
+        source: 000304ef_1.wav
+      - narration: Here's Roy Brown.... and he's singing, uhh, Mighty Mighty Man.
+        source: 000304ee_1.wav
+      - narration: This next song is Mighty Mighty Man.
+        source: 000304ed_1.wav
+      - narration: Next is some Roy Brown. This one is, uhh, Mighty Mighty Man.
+        source: 000304ec_1.wav
+    after:
+      - narration: Roy Brown there, singing Mighty Mighty Man.
+        source: 00087767_1.wav
+  - title: One More Tomorrow by Marjorie Hughes, featuring Frankie Carle and his Orchestra (1946)
+    source: one_more_tomorrow.wav
+    before:
+      - narration: Here's Frankie Carle with a song that, frankly, sounds a little too good to be true. I'm not saying he was embellishing, but... well, okay, I guess I am saying that. Never mind. Here's "One More Tomorrow."
+        source: 000edf46_1.wav
+      - narration: Next is, uhh... "One More Tomorrow" by Frankie Carle. It's... well, it's nice... A little sappy, I guess... but I mean, that's okay.
+        source: 000edf45_1.wav
+      - narration: Frankie Carle wrote a song about tomorrow... or, at least, uhh... I guess, his version of tomorrow, which is pretty different from mine...
+        source: 000edf44_1.wav
+    after:
+      - narration: And that was Frankie Carle, there. Well, I mean I guess it was actually Marjorie Hughes doing the singing, but... uhh, never mind.
+        source: 00047253_1.wav
+  - title: Orange Colored Sky by Stan Kenton, featuring Nat King Cole (1950)
+    source: orange_colored_sky.wav
+    before:
+      - narration: Here's a real classic from good old Nat King Cole... "Orange Colored Sky." It's... It's a good one!
+        source: 00148b70_1.wav
+      - narration: '"Orange Colored Sky," by Nat King Cole. You love this one, right? It''s a... A real classic. Sure.'
+        source: 00148b6f_1.wav
+      - narration: Uhh, what about some Nat King Cole? He's good, right?
+        source: 000eef68_1.wav
+    after:
+      - narration: Nat King Cole there. He's just the best, isn't he?
+        source: 00047266_1.wav
+  - title: Personality by The Pied Pipers, featuring Johnny Mercer (1946)
+    source: personality.wav
+    before:
+      - narration: Johnny Mercer is up next. I don't... I mean, I don't think this song is all that great, really, but some people like it.
+        source: 000edf49_1.wav
+      - narration: Ummm... how about Johnny Mercer? I kind of wonder if this one is supposed to be a joke. Does anyone know?
+        source: 000edf48_1.wav
+      - narration: This next one is from Johnny Mercer, singing about Personality. I mean, I guess that's important... to some people...
+        source: 000edf47_1.wav
+    after:
+      - narration: That was Personality, by Johnny Mercer.
+        source: 00047254_1.wav
+  - title: Pistol Packin' Mama by Vic Schoen and his Orchestra, featuring Bing Crosby and The Andrews Sisters (1943)
+    source: pistol_packin_mama.wav
+    before:
+      - narration: Are you a "Pistol Packin' Mama?" If you are, this song is about you...
+        source: 000ed744_1.wav
+    after: []
+  - title: Right Behind You Baby by Ray Smith (1958)
+    source: right_behind_you_baby.wav
+    before:
+      - narration: '"Right Behind You, Baby" is next... It''s a really upbeat song, but... I don''t know, I, uhh, feel like maybe Ray Smith was a little... creepy?'
+        source: 0014771e_1.wav
+      - narration: Ray Smith is "Right Behind You, Baby"... I mean, it's his song. He's not actually behind you. I didn't... I'm sorry, I didn't mean to startle anyone.
+        source: 0014771d_1.wav
+      - narration: Here's Ray Smith, with "Right Behind You, Baby"... a song that really sounds different when you hear it at 2 in the morning, y'know?...
+        source: 0014771c_1.wav
+    after:
+      - narration: Ray Smith, everybody... Ray... Smith...
+        source: 0004725f_1.wav
+  - title: Rocket 69 by Todd Rhodes and His Toddlers, featuring Connie Allen (1951)
+    source: rocket_69.wav
+    before:
+      - narration: '"Rocket 69" is next... and, I mean... you don''t hear them singing about the other 68 rockets... which kinda makes you think...'
+        source: 00186057_1.wav
+      - narration: So, this next one... I mean, you make a song called "Rocket 69" and... I just... I don't even... I can't. I just can't.
+        source: 00186054_1.wav
+      - narration: Now here's Connie Allen with a song that's... well, uhhh... It's about... uhh, heh. Heh heh. Uhh... here's "Rocket 69."
+        source: 00147714_1.wav
+    after:
+      - narration: Connie Allen there, with, uhh... heh, uhh... Rocket 69.
+        source: 00047257_1.wav
+  - title: Sixty Minute Man by Billy Ward and his Dominoes (1951)
+    source: sixty_minute_man.wav
+    before:
+      - narration: Here's "Sixty Minute Man," and, uhh... I mean, let's be honest here, it's... well, you know... just... here it is.
+        source: 001fde71_1.wav
+      - narration: This next song, it's... well, I mean... it's "Sixty Minute Man" and uhh... oh boy. I just... okay, never mind.
+        source: 001fde70_1.wav
+      - narration: So, uhh... how about Billy Ward and the Dominoes. This one... heh, uhh... I mean, it's... well... I'll just, I'll just play it.
+        source: 000ed73d_1.wav
+    after:
+      - narration: Billy Ward... a-and the Dominoes. Not just Billy, they were there too.
+        source: 0004724c_1.wav
+  - title: Worry, Worry, Worry by The Three Suns (1956)
+    source: worry_worry_worry.wav
+    before:
+      - narration: So, umm... Right, okay. Let's just, let's do a song by the Three Suns.
+        source: 000eef77_1.wav
+      - narration: Now... uhh... what now... Okay, well, uhh, let's play "Worry, Worry, Worry" by the Three Suns.
+        source: 000eef76_1.wav
+      - narration: '"Worry, Worry, Worry." That''s... uhh, I mean that''s the song by the Three Suns. And I was going to play it. Next. Now, I mean.'
+        source: 000eef75_1.wav
+    after:
+      - narration: That song was... it was... uhh... well, it was by Three Suns, and... uhh... oh, never mind.
+        source: 0004725e_1.wav
+  - title: The End of the World by Skeeter Davis (1962)
+    source: the_end_of_the_world.wav
+    before:
+      - narration: Here's "End of the World" by Skeeter Davis. It's... well, I think it's maybe a little melodramatic... but that's just me...
+        source: 00019348_1.wav
+      - narration: This one is from, uhh... Skeeter Davis. It's the "End of the World."
+        source: 00019343_1.wav
+    after:
+      - narration: Skeeter Davis. A name I still find confusing.
+        source: 00047267_1.wav
+  - title: The Wanderer by Dion (1961)
+    source: the_wanderer.wav
+    before: []
+    after: []
+  - title: Train Train* by Lynda Carter (2015)
+    source: train_train.wav
+    before:
+      - narration: Here's Goodneighbor's Magnolia singing "Train Train" and, uhh... well, choo choo!... oh god, I'm so sorry... it sounded like a good idea in my head...
+        source: 0001934d_1.wav
+    after: []
+  - title: Undecided by Chick Webb and his Orchestra, featuring Ella Fitzgerald (1938)
+    source: undecided.wav
+    before:
+      - narration: Next is Ella Fitzgerald, who doesn't like when people can't decide things. And then sings about it.
+        source: 000edf43_1.wav
+      - narration: Next I was going to play... uhh, Ella Fitzgerald, I guess.
+        source: 000304de_1.wav
+    after:
+      - narration: Undecided, by Ella Fitzgerald. I know the feeling.
+        source: 00047252_1.wav
+  - title: Uranium Fever by Elton Britt (1955)
+    source: uranium_fever.wav
+    before:
+      - narration: Elton Britt is next, with a song that... Well, frankly it sounds very irresponsible, for several reasons. Here's "Uranium Fever."
+        source: 00147718_1.wav
+      - narration: '"Uranium Fever" is on next, and... Well, I''m pretty sure enough time has gone by that we can all find the humor in this subject. Right?...'
+        source: 00147717_1.wav
+    after:
+      - narration: That was, uhh, Uranium Fever by... oh man, uhh... by Elton Britt! Yes. Right.
+        source: 00047259_1.wav
+  - title: Uranium Rock by Warren Smith (1958)
+    source: uranium_rock.wav
+    before:
+      - narration: I kind of feel like the last thing I'd want to do is, you know... uhh, go looking for radioactive material... but not Warren Smith! Here's "Uranium Rock."
+        source: 0014772a_1.wav
+      - narration: Here's "Uranium Rock," a song about people getting rich by finding uranium. That, uhh... That worked out real well for all of us, didn't it?... I'm joking, just joking...
+        source: 00147729_1.wav
+      - narration: Warren Smith has a song about digging for Uranium, which is, I guess... a thing people did back then? For fun? I... I don't get it.
+        source: 00147728_1.wav
+    after:
+      - narration: Hope you, uhh, enjoyed that song by... Warren Smith.
+        source: 00047264_1.wav
+  - title: Way Back Home by Bob Crosby and The Bob Cats (1950)
+    source: way_back_home.wav
+    before:
+      - narration: Now let's, uhh... Let's hear a really good song by Bob Crosby.
+        source: 000304d2_1.wav
+      - narration: Next is Bob Crosby, singing Way Back Home.
+        source: 000304d1_1.wav
+      - narration: Here's... uhh... Oh. Here's Bob Crosby with Way Back Home.
+        source: 000304d0_1.wav
+      - narration: This one is called Way Back Home.
+        source: 000304cf_1.wav
+      - narration: Here we go... Some Bob Crosby. I... well, I really like this one.
+        source: 000304cd_1.wav
+      - narration: This next one is, uhh... it's Bob Crosby.
+        source: 000304cb_1.wav
+    after:
+      - narration: ....oh. Uhhh, that was Bob Crosby.
+        source: 0008775e_1.wav
+  - title: Whole Lotta Shakin' Goin' On by Big Maybelle (2005)
+    source: whole_lotta_shakin_goin_on.wav
+    before:
+      - narration: What time is it? Why, it's time for a "Whole Lotta Shakin'"... because... well, because that's the name of the next song... at least, partially... anyway, here it is.
+        source: 00186058_1.wav
+      - narration: Here's Big Maybelle, with "Whole Lotta Shakin' Going On." I... I mean, I don't know what else there is to say. Kind of... speaks for itself, I think.
+        source: 00147716_1.wav
+      - narration: When someone named 'Big Maybelle' says there's a Whole Lotta Shakin' Going on.... well, you can probably believe... I mean, it's fair to say that's accurate. Probably.
+        source: 00147715_1.wav
+      - narration: Was I, uhh, the only one surprised that Skeeter Davis is, you know... a woman? Just... uhh, didn't really sound like a woman's name...
+        source: 00019346_1.wav
+    after:
+      - narration: Whole Lotta Shakin'.... whooooole lot of it. Yep. That was, uhh, Big Maybelle.
+        source: 00047258_1.wav
