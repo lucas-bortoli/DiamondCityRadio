@@ -1,21 +1,29 @@
-use std::{
-    fs,
-    os::windows::fs::MetadataExt,
-    time::{SystemTime, UNIX_EPOCH},
-};
-
-use frand::Rand;
+use std::{fs, os::windows::fs::MetadataExt};
 use yaml_rust2::YamlLoader;
 
 pub const BIT_DEPTH: u32 = 16;
 pub const SAMPLE_RATE: u32 = 44100;
 pub const CHANNEL_COUNT: u32 = 1;
-pub const STATION_EPOCH: u64 = 10000;
+pub const STATION_EPOCH: u64 = 1741013572723;
 
 pub const POLL_BUFFER_SIZE_BYTES: usize =
     (SAMPLE_RATE * CHANNEL_COUNT * (BIT_DEPTH / 8) / 10) as usize;
 
-#[derive(Debug)]
+pub trait SoundFile {
+    fn source_filename(&self) -> String;
+    fn size_bytes(&self) -> u64;
+    fn duration_ms(&self) -> u64 {
+        let bytes_per_millisecond = (SAMPLE_RATE / 1000) * (BIT_DEPTH / 8) * CHANNEL_COUNT;
+        return (self.size_bytes() - 44) / bytes_per_millisecond as u64;
+    }
+    fn time_to_byte_offset(&self, time_ms: u64) -> u64 {
+        let bytes_per_millisecond = (SAMPLE_RATE / 1000) * (BIT_DEPTH / 8) * CHANNEL_COUNT;
+
+        return 44 + time_ms * bytes_per_millisecond as u64;
+    }
+}
+
+#[derive(Clone, Debug)]
 pub struct Narration {
     pub content: String,
     pub source: String,
@@ -54,13 +62,33 @@ impl Narration {
     }
 }
 
-#[derive(Debug)]
+impl SoundFile for Narration {
+    fn source_filename(&self) -> String {
+        "./diamond_city_radio/narration/".to_string() + &self.source
+    }
+
+    fn size_bytes(&self) -> u64 {
+        self.size_bytes
+    }
+}
+
+#[derive(Clone, Debug)]
 pub struct Track {
     pub title: String,
     pub source: String,
     pub size_bytes: u64,
     pub narration_before: Vec<Narration>,
     pub narration_after: Vec<Narration>,
+}
+
+impl SoundFile for Track {
+    fn source_filename(&self) -> String {
+        "./diamond_city_radio/".to_string() + &self.source
+    }
+
+    fn size_bytes(&self) -> u64 {
+        self.size_bytes
+    }
 }
 
 impl Track {
@@ -101,35 +129,23 @@ impl Track {
             .collect()
     }
 
-    /// Retorna a duração dessa track em segundos
-    pub fn duration_s(&self) -> f64 {
-        let bytes_per_second = SAMPLE_RATE * (BIT_DEPTH / 8) * CHANNEL_COUNT;
-        return (self.size_bytes - 44) as f64 / bytes_per_second as f64;
-    }
-
     pub fn duration_ms(&self) -> u64 {
         let bytes_per_millisecond = (SAMPLE_RATE / 1000) * (BIT_DEPTH / 8) * CHANNEL_COUNT;
         return (self.size_bytes - 44) / bytes_per_millisecond as u64;
     }
+}
 
-    pub fn time_to_byte_offset(&self, time_ms: u64) -> u64 {
-        let bytes_per_millisecond = (SAMPLE_RATE / 1000) * (BIT_DEPTH / 8) * CHANNEL_COUNT;
-
-        return 44 + time_ms * bytes_per_millisecond as u64;
+impl PartialEq for Track {
+    fn eq(&self, other: &Self) -> bool {
+        self.title == other.title
     }
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub struct Station {
     pub title: String,
     pub seed: u64,
     pub tracks: Vec<Track>,
-}
-
-#[derive(Debug)]
-pub struct ResumeInformation<'a> {
-    pub track: &'a Track,
-    pub seek_ms: u64,
 }
 
 impl Station {
@@ -152,31 +168,5 @@ impl Station {
         };
 
         Ok(station)
-    }
-
-    pub fn determine_current_track_for_resuming(&self) -> ResumeInformation {
-        let mut track_rng = Rand::with_seed(self.seed);
-        let current_time_unix = SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .expect("O tempo voltou para trás da timestamp UNIX")
-            .as_millis() as u64;
-
-        fn next_track<'a>(station: &'a Station, track_rng: &mut Rand) -> &'a Track {
-            assert!(station.tracks.len() >= 1, "Não há trilhas nessa estação.");
-            let track_index = track_rng.r#gen::<usize>() % station.tracks.len();
-            return station.tracks.get(track_index).unwrap();
-        }
-
-        let mut current_track = next_track(&self, &mut track_rng);
-        let mut current_track_time = current_time_unix - STATION_EPOCH;
-        while current_track_time >= current_track.duration_ms() {
-            current_track_time = current_track_time - current_track.duration_ms();
-            current_track = next_track(&self, &mut track_rng);
-        }
-
-        return ResumeInformation {
-            track: current_track,
-            seek_ms: current_track_time,
-        };
     }
 }
