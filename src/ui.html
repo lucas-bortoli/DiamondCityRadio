@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ui.css" />
+    <title>Pip-Boy</title>
+  </head>
+  <body>
+    <div class="screen">
+      <nav>
+        <span>Stat</span>
+        <span>Inv</span>
+        <span>Data</span>
+        <span>Map</span>
+        <span class="active">Radio</span>
+      </nav>
+      <ul class="station-list"></ul>
+      <canvas id="wave-canvas" width="64" height="64"></canvas>
+      <audio controls></audio>
+      <footer></footer>
+    </div>
+    <script>
+      const stations = [
+        ["Diamond City Radio", "/station/diamondcity"],
+        ["The Vibe 98.8 (GTA IV)", "/station/thevibe"],
+        ["Distress Signal", null],
+        ["Emergency Frequency RJ1138", null],
+        ["Military Frequency AF95", null],
+      ];
+
+      const player = document.querySelector("audio");
+      const list = document.querySelector(".station-list");
+      for (const [title, address] of stations) {
+        const el = document.createElement("li");
+        el.innerText = title;
+        if (address !== null) {
+          el.setAttribute("data-station", address);
+        } else {
+          el.setAttribute("aria-disabled", true);
+        }
+        list.appendChild(el);
+      }
+
+      const removeSelection = () =>
+        list.querySelector(".active")?.classList.remove("active");
+      const setSelection = (url) =>
+        list.querySelector(`[data-station="${url}"]`)?.classList.add("active");
+
+      function playUrl(url) {
+        if (player.getAttribute("data-src") === url) {
+          removeSelection();
+          player.removeAttribute("data-src");
+          player.src = "";
+        } else {
+          removeSelection();
+          setSelection(url);
+          player.setAttribute("data-src", url);
+          player.src = url;
+        }
+      }
+
+      list.addEventListener("click", (ev) => {
+        /**@type {HTMLElement} */
+        const target = event.target;
+        if (!target.hasAttribute("data-station")) return;
+        playUrl(target.getAttribute("data-station"));
+      });
+
+      player.addEventListener("canplay", () => {
+        player.play();
+      });
+    </script>
+    <script>
+      const canvas = document.getElementById("wave-canvas");
+      const ctx = canvas.getContext("2d");
+
+      let i = 0;
+      function drawWaveform() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (player.hasAttribute("data-src")) {
+          ctx.strokeStyle = "#005500";
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+
+          let amplitude = Math.random() * 10 + 20;
+          let frequency = Math.random() * 0.5 + 0.2;
+          let phase = (i += 1.5);
+
+          for (let x = 0; x < canvas.width / 2; x++) {
+            let y =
+              Math.sin(x * frequency + phase) * amplitude + canvas.height / 2;
+            if (x === 0) {
+              ctx.moveTo(x * 2, y);
+            } else {
+              ctx.lineTo(x * 2, y);
+            }
+          }
+
+          ctx.stroke();
+        }
+
+        setTimeout(() => requestAnimationFrame(drawWaveform), 100);
+      }
+
+      requestAnimationFrame(drawWaveform);
+    </script>
+  </body>
+</html>
