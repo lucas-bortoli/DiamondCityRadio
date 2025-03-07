@@ -16,10 +16,11 @@
         <span class="active">Radio</span>
       </nav>
       <ul class="station-list"></ul>
-      <canvas id="wave-canvas" width="64" height="64"></canvas>
+      <canvas id="wave-canvas" width="128" height="64"></canvas>
       <audio controls></audio>
       <footer></footer>
     </div>
+    
     <script>
       const stations = [
         ["Diamond City Radio", "/station/diamondcity"],
@@ -31,6 +32,7 @@
 
       const player = document.querySelector("audio");
       const list = document.querySelector(".station-list");
+
       for (const [title, address] of stations) {
         const el = document.createElement("li");
         el.innerText = title;
@@ -60,8 +62,7 @@
         }
       }
 
-      list.addEventListener("click", (ev) => {
-        /**@type {HTMLElement} */
+      list.addEventListener("click", (event) => {
         const target = event.target;
         if (!target.hasAttribute("data-station")) return;
         playUrl(target.getAttribute("data-station"));
@@ -70,41 +71,51 @@
       player.addEventListener("canplay", () => {
         player.play();
       });
-    </script>
-    <script>
+
       const canvas = document.getElementById("wave-canvas");
       const ctx = canvas.getContext("2d");
 
-      let i = 0;
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256;
+      
+      const source = audioContext.createMediaElementSource(player);
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
+
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
       function drawWaveform() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        analyser.getByteTimeDomainData(dataArray);
 
-        if (player.hasAttribute("data-src")) {
-          ctx.strokeStyle = "#005500";
-          ctx.lineWidth = 1;
-          ctx.beginPath();
+        ctx.strokeStyle = "#00ff00";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
 
-          let amplitude = Math.random() * 10 + 20;
-          let frequency = Math.random() * 0.5 + 0.2;
-          let phase = (i += 1.5);
+        const sliceWidth = canvas.width / bufferLength;
+        let x = 0;
 
-          for (let x = 0; x < canvas.width / 2; x++) {
-            let y =
-              Math.sin(x * frequency + phase) * amplitude + canvas.height / 2;
-            if (x === 0) {
-              ctx.moveTo(x * 2, y);
-            } else {
-              ctx.lineTo(x * 2, y);
-            }
+        for (let i = 0; i < bufferLength; i++) {
+          let y = (dataArray[i] / 255) * canvas.height;
+          if (i === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
           }
-
-          ctx.stroke();
+          x += sliceWidth;
         }
 
-        setTimeout(() => requestAnimationFrame(drawWaveform), 100);
+        ctx.stroke();
+        requestAnimationFrame(drawWaveform);
       }
 
-      requestAnimationFrame(drawWaveform);
+      player.addEventListener("play", () => {
+        audioContext.resume();
+        requestAnimationFrame(drawWaveform);
+      });
+
     </script>
   </body>
 </html>
