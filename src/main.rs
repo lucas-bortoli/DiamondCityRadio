@@ -133,7 +133,6 @@ fn rocket() -> _ {
 
                 if tx.send(audio_buffer).is_err() {
                     //println!("Can't send data. No audio consumers?");
-                    thread::sleep(Duration::from_millis(1000));
                 }
 
                 thread::sleep(calculate_sleep_duration(BUFFER_SAMPLE_COUNT));
