@@ -39,8 +39,7 @@ impl RingBuffer {
         sample
     }
 }
-
-pub struct RingBufferSound {
+ pub struct RingBufferSound {
     stuff: Arc<Mutex<RingBuffer>>,
 }
 
