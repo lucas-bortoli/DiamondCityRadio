@@ -1,4 +1,9 @@
-use std::{fs, os::windows::fs::MetadataExt};
+use std::fs;
+#[cfg(target_family = "unix")]
+use std::os::unix::fs::MetadataExt;
+#[cfg(target_os = "windows")]
+use std::os::windows::fs::MetadataExt;
+
 use yaml_rust2::YamlLoader;
 
 pub const BIT_DEPTH: u32 = 16;
@@ -14,12 +19,11 @@ pub trait SoundFile {
     fn size_bytes(&self) -> u64;
     fn duration_ms(&self) -> u64 {
         let bytes_per_millisecond = (SAMPLE_RATE / 1000) * (BIT_DEPTH / 8) * CHANNEL_COUNT;
-        return (self.size_bytes() - 44) / bytes_per_millisecond as u64;
+        (self.size_bytes() - 44) / bytes_per_millisecond as u64
     }
     fn time_to_byte_offset(&self, time_ms: u64) -> u64 {
         let bytes_per_millisecond = (SAMPLE_RATE / 1000) * (BIT_DEPTH / 8) * CHANNEL_COUNT;
-
-        return 44 + time_ms * bytes_per_millisecond as u64;
+        44 + time_ms * bytes_per_millisecond as u64
     }
 }
 
@@ -41,7 +45,7 @@ impl Narration {
                 .ok_or("Missing narration source")?
         );
         let metadata = fs::metadata(&source_path)?;
-        let size_bytes = metadata.file_size();
+        let size_bytes = metadata.len(); // Cross-platform way to get file size
 
         Ok(Narration {
             content: narration_def["narration"]
@@ -58,13 +62,13 @@ impl Narration {
 
     pub fn duration_ms(&self) -> u64 {
         let bytes_per_millisecond = (SAMPLE_RATE / 1000) * (BIT_DEPTH / 8) * CHANNEL_COUNT;
-        return (self.size_bytes - 44) / bytes_per_millisecond as u64;
+        (self.size_bytes - 44) / bytes_per_millisecond as u64
     }
 }
 
 impl SoundFile for Narration {
     fn source_filename(&self) -> String {
-        "./diamond_city_radio/narration/".to_string() + &self.source
+        format!("./diamond_city_radio/narration/{}", self.source)
     }
 
     fn size_bytes(&self) -> u64 {
@@ -83,7 +87,7 @@ pub struct Track {
 
 impl SoundFile for Track {
     fn source_filename(&self) -> String {
-        "./diamond_city_radio/".to_string() + &self.source
+        format!("./diamond_city_radio/{}", self.source)
     }
 
     fn size_bytes(&self) -> u64 {
@@ -98,7 +102,7 @@ impl Track {
             track_def["source"].as_str().ok_or("Missing track source")?
         );
         let metadata = fs::metadata(&source_path)?;
-        let size_bytes = metadata.file_size();
+        let size_bytes = metadata.len(); // Cross-platform file size
 
         let track = Track {
             title: track_def["title"]
@@ -125,13 +129,13 @@ impl Track {
             .as_vec()
             .ok_or(format!("Missing {}", key))?
             .iter()
-            .map(|narration_def| Narration::from_yaml(narration_def))
+            .map(Narration::from_yaml)
             .collect()
     }
 
     pub fn duration_ms(&self) -> u64 {
         let bytes_per_millisecond = (SAMPLE_RATE / 1000) * (BIT_DEPTH / 8) * CHANNEL_COUNT;
-        return (self.size_bytes - 44) / bytes_per_millisecond as u64;
+        (self.size_bytes - 44) / bytes_per_millisecond as u64
     }
 }
 
@@ -163,7 +167,7 @@ impl Station {
                 .as_vec()
                 .ok_or("Missing tracks")?
                 .iter()
-                .map(|track_def| Track::from_yaml(track_def))
+                .map(Track::from_yaml)
                 .collect::<Result<Vec<_>, _>>()?,
         };
 
