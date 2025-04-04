@@ -22,7 +22,6 @@ use std::{
 #[macro_use]
 extern crate rocket;
 
-mod ringbuffer_sound;
 mod state_resumer;
 mod station_data;
 

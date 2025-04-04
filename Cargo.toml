@@ -4,7 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-awedio = "0.4.1"
 bytemuck = "1.21.0"
 frand = "0.10.1"
 rocket = "0.5.1"
