@@ -9,7 +9,7 @@ DiamondCityRadio is inspired by "Diamond City Radio" in the video game Fallout 4
 ## Features
 
 - Live Music Streaming: Serve music via a standard HTTP stream, playable by most audio players;
-- Deterministic Playlist Playlist: Tracks are shuffled based on a seed to ensure playlist replayability. If the server restarts, the same song will be played, at the same time, as if it had never stopped;
+- Deterministic Playlist: Tracks are shuffled based on a seed to ensure playlist replayability. If the server restarts, the same song will be played, at the expected time, as if it had never stopped;
 - Simple Configuration: The radio station is defined in a simple YAML manifest;
 - Track Narration: Songs may have intros and outros, played before/after each track, similar to how Diamond City Radio works in Fallout 4;
 - Web UI: Provides a minimal user interface, similar to the "Radio" tab of the Fallout 4 Pip-Boy.
