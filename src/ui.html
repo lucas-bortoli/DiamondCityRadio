@@ -20,11 +20,10 @@
       <audio controls></audio>
       <footer></footer>
     </div>
-    
+
     <script>
       const stations = [
         ["Diamond City Radio", "/station/diamondcity"],
-        ["The Vibe 98.8 (GTA IV)", "/station/thevibe"],
         ["Distress Signal", null],
         ["Emergency Frequency RJ1138", null],
         ["Military Frequency AF95", null],
@@ -75,10 +74,11 @@
       const canvas = document.getElementById("wave-canvas");
       const ctx = canvas.getContext("2d");
 
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const audioContext = new (window.AudioContext ||
+        window.webkitAudioContext)();
       const analyser = audioContext.createAnalyser();
       analyser.fftSize = 1024;
-      
+
       const source = audioContext.createMediaElementSource(player);
       source.connect(analyser);
       analyser.connect(audioContext.destination);
@@ -115,7 +115,6 @@
         audioContext.resume();
         requestAnimationFrame(drawWaveform);
       });
-
     </script>
   </body>
 </html>

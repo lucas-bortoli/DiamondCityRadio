@@ -8,7 +8,8 @@ use crate::station_data::{CHANNEL_COUNT, POLL_BUFFER_SIZE_BYTES, SAMPLE_RATE};
 use awedio::{NextSample, Sound};
 use bytemuck::cast_slice;
 
-const BUFFER_SIZE: usize = (SAMPLE_RATE * CHANNEL_COUNT) as usize; // quantas samples cabe nesse buffer?
+const BUFFER_SIZE_PADDING: usize = (SAMPLE_RATE * CHANNEL_COUNT * (5 / 100)) as usize; // 5% de padding
+const BUFFER_SIZE: usize = (SAMPLE_RATE * CHANNEL_COUNT) as usize + BUFFER_SIZE_PADDING; // quantas samples cabe nesse buffer?
 
 struct RingBuffer {
     contents: Box<[i16; BUFFER_SIZE]>,
@@ -39,7 +40,7 @@ impl RingBuffer {
         sample
     }
 }
- pub struct RingBufferSound {
+pub struct RingBufferSound {
     stuff: Arc<Mutex<RingBuffer>>,
 }
 
