@@ -1,3 +1,4 @@
+use process_priority::set_high_priority;
 use rocket::{
     http::ContentType,
     response::{
@@ -22,6 +23,7 @@ use std::{
 #[macro_use]
 extern crate rocket;
 
+mod process_priority;
 mod state_resumer;
 mod station_data;
 
@@ -94,6 +96,8 @@ fn calculate_sleep_duration(buffer_size_samples: u32) -> Duration {
 
 #[launch]
 fn rocket() -> _ {
+    set_high_priority();
+
     let (tx, _) = broadcast::channel::<Box<[u8; POLL_BUFFER_SIZE_BYTES]>>(8);
 
     let broadcaster = Arc::new(AudioBroadcaster { sender: tx.clone() });

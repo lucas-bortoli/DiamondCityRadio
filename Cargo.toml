@@ -6,5 +6,7 @@ edition = "2024"
 [dependencies]
 bytemuck = "1.21.0"
 frand = "0.10.1"
+libc = "0.2.171"
 rocket = "0.5.1"
+winapi = { version = "0.3.9", features = ["processthreadsapi", "winbase"] }
 yaml-rust2 = "0.10.0"
